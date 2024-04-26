@@ -1,0 +1,26 @@
+{
+  "name": "e-commerce-ulp-jonyescobar",
+  "version": "1.0.0",
+  "description": "API",
+  "main": "src/app.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jony-Escobar"
+  },
+  "author": "Escobar Jonathan",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "fs": "^0.0.1-security",
+    "morgan": "^1.10.0",
+    "node-google-translate-skidz": "^1.1.2",
+    "nodemon": "^3.1.0",
+    "path": "^0.12.7",
+    "pug": "^3.0.2"
+  }
+}

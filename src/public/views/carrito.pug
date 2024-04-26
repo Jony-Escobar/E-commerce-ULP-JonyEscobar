@@ -1,0 +1,58 @@
+doctype html
+html(lang="es")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Carrito de compras
+        link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css")
+        link(rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css")
+        link(rel="stylesheet" href="css/style.css")
+    body
+        .wrapper
+            header.header-mobile
+                h1.logo Fake Store API
+                button.open-menu#open-menu
+                    i.bi.bi-list
+            aside
+                button.close-menu#close-menu
+                    i.bi.bi-x
+                header
+                    h1.logo Fake Store API
+                nav
+                    ul
+                        li
+                            a.boton-menu.boton-volver(href="./inicio")
+                                i.bi.bi-arrow-return-left
+                                |  Seguir comprando
+                        li
+                            a.boton-menu.boton-carrito.active(href="./carrito")
+                                i.bi.bi-cart-fill
+                                |  Carrito
+                footer
+                    p.texto-footer © 2024 Jony Escobar
+            main
+                h2.titulo-principal Carrito
+                .contenedor-carrito
+                    p#carrito-vacio.carrito-vacio Tu carrito está vacío. 
+                        i.bi.bi-emoji-frown
+
+                    #carrito-productos.carrito-productos.disabled
+                        // Esto se va a completar con el JS
+
+                    #carrito-acciones.carrito-acciones.disabled
+                        .carrito-acciones-izquierda
+                            button#carrito-acciones-vaciar.carrito-acciones-vaciar Vaciar carrito
+                        .carrito-acciones-derecha
+                            .carrito-acciones-total
+                                p Total:
+                                p#total $3000
+                            button#carrito-acciones-comprar.carrito-acciones-comprar Comprar ahora
+
+                    p#carrito-comprado.carrito-comprado.disabled Muchas gracias por tu compra. 
+                        i.bi.bi-emoji-laughing
+
+        script(type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js")
+        script(src="https://cdn.jsdelivr.net/npm/sweetalert2@11")
+        script(src="js/carrito.js")
+        script(src="js/menu.js")
