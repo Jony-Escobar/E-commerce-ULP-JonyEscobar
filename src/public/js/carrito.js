@@ -205,14 +205,12 @@ function actualizarTotal() {
 }
 
 botonComprar.addEventListener("click", comprarCarrito);
-let ultimoIdCompra = 0;
+
 function comprarCarrito() {
-  ultimoIdCompra++;
   // Crear un objeto de compra
   const compra = {
-    id: ultimoIdCompra,
     productosComprados: productosEnCarrito, // Lista de productos en el carrito
-    fecha: new Date().toISOString(), // Fecha y hora de la compra
+    fecha: new Date, // Fecha y hora de la compra
   };
   console.log(compra);
   // Realizar una solicitud POST al servidor para persistir la compra

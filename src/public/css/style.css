@@ -154,6 +154,41 @@ main {
     border-radius: 1rem;
 }
 
+.producto {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+
+.oferta-banda {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.producto-descuento {
+    color: lightgreen;
+    font-weight: bold;
+}
+
+.producto-precio-original{
+    text-decoration: line-through;
+    color: #888;
+}
+
+.producto-precio-final{
+    font-weight: bold;
+}
+
+.producto-precio {
+    font-weight: bold;
+}
+
 .producto-detalles {
     background-color: var(--clr-main);
     color: var(--clr-white);

@@ -4,7 +4,7 @@ import { appendFile } from "fs";
 const router = express.Router();
 
 router.get("/", (req, res) => {
-    res.render("inicio", { title: "Inicio" });    
+    res.render("inicio", { title: "Inicio" });
 })
 
 //Exportamos el router

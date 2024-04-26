@@ -57,7 +57,7 @@ function cargarProductos(productosElegidos) {
                 <p class="producto-descripcion" title="${
                   producto.description
                 }">${descripcionTruncada}</p>
-                <p class="producto-precio">Precio Original: $${precioOriginal}</p>
+                <p class="producto-precio-original">Precio Original: $${precioOriginal}</p>
                 <p class="producto-descuento">Descuento: ${descuento}%</p>
                 <p class="producto-precio-final">Precio Final: $${precioFinal.toFixed(
                   2
