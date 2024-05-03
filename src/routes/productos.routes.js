@@ -57,7 +57,6 @@ const productosListos = () => {
     router.get("/", (req, res) => {
     productosListos()
       .then((productos) => {
-        //res.render("inicio", { title: "Inicio", productos: productos });
         res.json(productos);
       })
       .catch((error) => {
