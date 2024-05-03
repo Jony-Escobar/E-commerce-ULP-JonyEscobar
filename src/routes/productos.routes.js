@@ -2,7 +2,6 @@
 import express from "express";
 const router = express.Router();
 import translate from "node-google-translate-skidz"; //Importamos translate
-import fs from "fs";
 
 // Obtener, formatear y traducir todos los productos
 const productosListos = () => {
@@ -64,12 +63,6 @@ const productosListos = () => {
       .catch((error) => {
         res.status(500).send("Error al consultar todos los productos");
       });
-  });
-
-  //Recibo post con el id del producto
-    router.post("/", (req, res) => {
-    console.log(req.body);
-    res.send("Agregado al carrito");
   });
 
 //Exportamos el router

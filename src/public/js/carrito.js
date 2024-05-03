@@ -209,10 +209,13 @@ botonComprar.addEventListener("click", comprarCarrito);
 function comprarCarrito() {
   // Crear un objeto de compra
   const compra = {
-    productosComprados: productosEnCarrito, // Lista de productos en el carrito
-    fecha: new Date, // Fecha y hora de la compra
+    productosComprados: productosEnCarrito.map(producto => ({
+      nombre: producto.title,
+      precio: producto.price,
+      cantidad: producto.cantidad
+    })), // Lista de productos en el carrito
+    fecha: new Date(), // Fecha y hora de la compra
   };
-  console.log(compra);
   // Realizar una solicitud POST al servidor para persistir la compra
   fetch("http://localhost:3000/carrito", {
     method: "POST",

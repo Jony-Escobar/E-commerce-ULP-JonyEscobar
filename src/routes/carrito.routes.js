@@ -1,7 +1,8 @@
 //Importamos
 import express from "express";
+import {pool} from '../db/db.js';
+
 const router = express.Router();
-import fs from "fs";
 const app = express();
 
 // Ruta al archivo compras.json
@@ -15,49 +16,18 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  const compra = req.body;
+    const compra = req.body;
 
-  // Convertir la compra a formato JSON
-  const compraJSON = JSON.stringify(compra, null, 2);
-
-  // Leer el contenido actual del archivo compras.json
-  fs.readFile(comprasFilePath, (err, data) => {
-    if (err) {
-        console.error("Error al leer el archivo de compras:", err);
-        res.status(500).send("Error al procesar la compra");
-        return;
-    }
-
-    let compras = [];
-    try {
-        // Intentar parsear el contenido del archivo JSON como un array
-        compras = JSON.parse(data);
-        if (!Array.isArray(compras)) {
-            compras = []; // Si no es un array válido, inicializar como un array vacío
-        }
-    } catch (parseError) {
-        console.error("Error al parsear el contenido del archivo JSON:", parseError);
-        res.status(500).send("Error al procesar la compra");
-        return;
-    }
-
-    // Agregar la nueva compra al array de compras
-    compras.push(compra);
-
-    // Convertir las compras actualizadas a formato JSON
-    const comprasJSON = JSON.stringify(compras, null, 2);
-
-    // Escribir las compras actualizadas en el archivo compras.json
-    fs.writeFile(comprasFilePath, comprasJSON, (writeErr) => {
-        if (writeErr) {
-            console.error("Error al guardar la compra:", writeErr);
-            res.status(500).send("Error al guardar la compra");
+    // Ejecutar la consulta SQL para insertar la compra en la base de datos
+    pool.query('INSERT INTO compras (productos, fecha) VALUES (?, ?)', [JSON.stringify(compra.productosComprados), compra.fecha], (err, result) => {
+        if (err) {
+            console.error("Error al insertar la compra:", err);
+            res.status(500).json({ error: "Error interno del servidor" });
         } else {
-            console.log("Compra guardada correctamente");
-            res.status(201).send("Compra guardada correctamente");
+            console.log("Compra insertada correctamente");
+            res.status(200).json({ message: "Compra insertada correctamente" });
         }
     });
-});
 });
 
 //Exportamos el router
