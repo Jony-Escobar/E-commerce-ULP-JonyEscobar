@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "productosComprados": [
+      {
+        "id": 2,
+        "title": "Camisetas ajustadas premium informales para hombre",
+        "price": 22.3,
+        "description": "Estilo ajustado, manga larga raglán en contraste, tapeta henley de tres botones, tejido ligero y suave para un uso cómodo y transpirable. Y camisas con costuras sólidas y cuello redondo hechas para mayor durabilidad y un excelente ajuste para ropa de moda informal y fanáticos acérrimos del béisbol. El escote redondo estilo Henley incluye una tapeta de tres botones.",
+        "category": "Ropa de Hombre",
+        "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+        "cantidad": 1
+      }
+    ],
+    "fecha": "2024-05-03T12:29:01.986Z"
+  }
+]

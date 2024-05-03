@@ -1,59 +1,50 @@
-doctype html
-html(lang="es")
-    head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible" content="IE=edge")
-        meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        title= title
-        link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css")
-        link(rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css")
-        link(rel="stylesheet" href="css/style.css")
-    body
-        .wrapper
-            header.header-mobile
+extends layout
+
+block content
+    .wrapper
+        header.header-mobile
+            h1.logo Fake Store API
+            button.open-menu#open-menu
+                i.bi.bi-list
+        aside
+            button.close-menu#close-menu
+                i.bi.bi-x
+            header
                 h1.logo Fake Store API
-                button.open-menu#open-menu
-                    i.bi.bi-list
-            aside
-                button.close-menu#close-menu
-                    i.bi.bi-x
-                header
-                    h1.logo Fake Store API
-                nav
-                    ul.menu
-                        li
-                            button.boton-menu.boton-categoria#todos.active
-                                i.bi.bi-hand-index-thumb-fill
-                                |  Todos los productos
-                        li
-                            button.boton-menu.boton-categoria#ropadehombre
-                                i.bi.bi-hand-index-thumb
-                                |  Ropa de hombre
-                        li
-                            button.boton-menu.boton-categoria#ropademujer
-                                i.bi.bi-hand-index-thumb
-                                |  Ropa de mujer
-                        li
-                            button.boton-menu.boton-categoria#joyeria
-                                i.bi.bi-hand-index-thumb
-                                |  Joyeria
-                        li
-                            button.boton-menu.boton-categoria#electronica
-                                i.bi.bi-hand-index-thumb
-                                |  Electronica
-                        li
-                            a.boton-menu.boton-carrito(href="./carrito")
-                                i.bi.bi-cart-fill
-                                |  Carrito
-                                span.numerito#numerito 0
-                footer
-                    p.texto-footer © 2024 Jony Escobar
-            main
-                h2.titulo-principal#titulo-principal Todos los productos
-                div.contenedor-productos#contenedor-productos
-                    // Esto se va a completar con el JS
-                        
-    
+            nav
+                ul.menu
+                    li
+                        button.boton-menu.boton-categoria#todos.active
+                            i.bi.bi-hand-index-thumb-fill
+                            |  Todos los productos
+                    li
+                        button.boton-menu.boton-categoria#ropadehombre
+                            i.bi.bi-hand-index-thumb
+                            |  Ropa de hombre
+                    li
+                        button.boton-menu.boton-categoria#ropademujer
+                            i.bi.bi-hand-index-thumb
+                            |  Ropa de mujer
+                    li
+                        button.boton-menu.boton-categoria#joyeria
+                            i.bi.bi-hand-index-thumb
+                            |  Joyeria
+                    li
+                        button.boton-menu.boton-categoria#electronica
+                            i.bi.bi-hand-index-thumb
+                            |  Electronica
+                    li
+                        a.boton-menu.boton-carrito(href="./carrito")
+                            i.bi.bi-cart-fill
+                            |  Carrito
+                            span.numerito#numerito 0
+            footer
+                p.texto-footer © 2024 Jony Escobar
+        main
+            h2.titulo-principal#titulo-principal Todos los productos
+            div.contenedor-productos#contenedor-productos
+                // Esto se va a completar con el JS
+
     script(type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js")
     script(src="js/main.js")
     script(src="js/menu.js")
