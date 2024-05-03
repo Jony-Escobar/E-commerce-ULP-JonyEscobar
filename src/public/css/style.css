@@ -172,20 +172,24 @@ main {
 }
 
 .producto-descuento {
+    text-align: center;
     color: lightgreen;
     font-weight: bold;
 }
 
 .producto-precio-original{
+    text-align: center;
     text-decoration: line-through;
     color: #888;
 }
 
 .producto-precio-final{
+    text-align: center;
     font-weight: bold;
 }
 
 .producto-precio {
+    text-align: center;
     font-weight: bold;
 }
 
@@ -418,11 +422,7 @@ main {
         flex-wrap: wrap;
         row-gap: 1rem;
     }
-    
-
 }
-
-
 
 @media screen and (max-width: 400px) {
     .contenedor-productos {

@@ -138,10 +138,25 @@ botonesCategorias.forEach((boton) => {
       cargarProductos(productos); // Mostrar todos los productos
     } else {
       // Obtener el título para mostrar en el título principal
-      const tituloCategoria =
-        categoriaSeleccionada.charAt(0).toUpperCase() +
-        categoriaSeleccionada.slice(1);
-      tituloPrincipal.innerText = tituloCategoria;
+      //const tituloCategoria = "";
+      switch (categoriaSeleccionada) {
+        case "ropadehombre":
+          tituloPrincipal.innerText = "Ropa de hombre";
+          break;
+        case "ropademujer":
+          tituloPrincipal.innerText = "Ropa de mujer";
+          break;
+        case "joyeria":
+          tituloPrincipal.innerText = "Joyeria";
+          break;
+        case "electronica":
+          tituloPrincipal.innerText = "Electronica";
+          break;
+        default:
+          break;
+      }
+
+      //tituloPrincipal.innerText = tituloCategoria;
 
       // Cargar productos de la categoría seleccionada
       cargarProductosPorCategoria(categoriaSeleccionada);
