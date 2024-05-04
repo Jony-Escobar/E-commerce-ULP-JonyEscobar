@@ -1,6 +1,6 @@
 let ofertas = [];
 let productosEnCarrito = localStorage.getItem("productos-en-carrito");
-fetch("http://localhost:3000/api/ofertas")
+fetch("/api/ofertas")
   .then((response) => response.json())
   .then((data) => {
     ofertas = data;
@@ -217,7 +217,7 @@ function comprarCarrito() {
     fecha: new Date(), // Fecha y hora de la compra
   };
   // Realizar una solicitud POST al servidor para persistir la compra
-  fetch("http://localhost:3000/carrito", {
+  fetch("/carrito", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

@@ -1,6 +1,6 @@
 let productos = [];
 
-fetch("http://localhost:3000/api/productos")
+fetch("/api/productos")
   .then((response) => response.json())
   .then((data) => {
     productos = data;
@@ -9,7 +9,7 @@ fetch("http://localhost:3000/api/productos")
 
 let ofertas = [];
 
-fetch("http://localhost:3000/api/ofertas")
+fetch("/api/ofertas")
   .then((response) => response.json())
   .then((data) => {
     ofertas = data;
